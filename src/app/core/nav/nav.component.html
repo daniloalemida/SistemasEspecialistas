@@ -1,0 +1,25 @@
+<mat-sidenav-container class="container">
+    <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="66" fixedBottomGap="65">
+        <mat-nav-list class="nav-list">
+            <a mat-list-item routerLink="/">
+                <i class="material-icons">home</i>
+                Home
+            </a>
+            <a mat-list-item routerLink="/cadastro-sistema">
+                <i class="material-icons">donut_small</i>
+                Cadastrar Sistema
+            </a>
+            <a mat-list-item routerLink="/cadastro-variaveis">
+                <i class="material-icons">grading</i>
+                Cadastrar Variáveis / Objetivos
+            </a>
+            <a mat-list-item routerLink="/cadastro-regras">
+                <i class="material-icons">ballot</i>
+                    Cadastrar Regras     
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
