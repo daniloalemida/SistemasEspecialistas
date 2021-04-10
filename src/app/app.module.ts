@@ -14,9 +14,13 @@ import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './core/home/home.component';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CadastroRegrasComponent } from './core/cadastro-regras/cadastro-regras.component';
 import { CadastroVariaveisRegrasComponent } from './core/cadastro-variaveis-regras/cadastro-variaveis-regras.component';
 import { CadastroSistemaComponent } from './core/cadastro-sistema/cadastro-sistema.component';
+
+import { HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -36,7 +40,10 @@ import { CadastroSistemaComponent } from './core/cadastro-sistema/cadastro-siste
     MatToolbarModule,
     MatListModule,
     MatSidenavModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

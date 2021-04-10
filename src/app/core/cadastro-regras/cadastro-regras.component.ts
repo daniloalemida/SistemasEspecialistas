@@ -1,4 +1,6 @@
+import { RegrasService } from './../services/regras.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-regras',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroRegrasComponent implements OnInit {
 
-  constructor() { }
+  constructor(private regrasService: RegrasService,
+      private router: Router ) { }
 
   ngOnInit(): void {
+    
   }
+
+  createRegras(): void{
+    this.regrasService.showMessage("Regra salva com sucesso!!!")
+  }
+
+  cancelar(){
+    this.router.navigate(['/'])
+  }
+
+
 
 }
