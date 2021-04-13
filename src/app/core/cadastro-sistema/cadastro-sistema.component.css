@@ -1,0 +1,10 @@
+.cadastro{
+    display: flex;
+    margin-top: 20px;
+    width: 50%;
+}
+
+.alinharbotao button{
+    display: inline;
+    align-items: flex-end
+}

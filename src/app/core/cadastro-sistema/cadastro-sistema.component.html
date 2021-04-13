@@ -1,8 +1,78 @@
-<p>cadastro-sistema works!</p>
+<mat-card>
+    <div class="">
+        <table class="table">
+            <thead class="">
+                <tr>
+                    <th style="width: 8%; align-items: flex-start; display: inline;">id</th>
+                    <th style="width: 60%; text-align: start;">NOME SISTEMA</th>
+                    <th style="width: 8%;"></th>
+                    <th style="width: 8%;"></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of sistemas">
+                <tr>
+                    <td>{{item.id}}</td>
+                    <td>{{item.nome}}</td>
+                    <td> <button class="btn bg-light" (click)="openEditarCadastro(item.id, true)"><i class="material-icons"
+                                style="font-size: 25px; color: green;">edit</i></button></td>
+                    <td> <button class="btn bg-light" (click)="deletarSistema(item.id)"><i class="material-icons"
+                                style="font-size: 25px; color: red;">delete</i></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-<button mat-raised-button (click)="createSistema()" color="primary">
-    Crear Sistema
-</button>
-<button mat-raised-button (click)="cancelar()">
-    Cancelar
-</button>
+    <hr>
+
+
+
+    <div class="alinharbotao">
+        <button mat-raised-button (click)="openCadastro(true)" style="background: green; color: white;">
+            Cadastrar Novo Sistema
+        </button>
+        <button mat-raised-button (click)="cancelar()" style="background: red; color: white;">
+            Sair
+        </button>
+    </div>
+</mat-card>
+
+
+
+<mat-card class="cadastro" *ngIf="abrirCadastro">
+    <fieldset style="width: 90%; padding: 20px;">
+        <legend>Cadastrar Novo Sistema</legend>
+        <form>
+            <mat-form-field>
+                <input matInput placeholder="Nome do Sistema" [(ngModel)]="sistema.nome" name="nome">
+            </mat-form-field>
+        </form>
+        <button mat-raised-button (click)="createSistema()" color="primary">
+            Salvar Sistema
+        </button>
+        <button mat-raised-button (click)="openCadastro(false)" style="background: red; color: white;">
+            Cancelar
+        </button>
+    </fieldset>
+</mat-card>
+
+
+<mat-card class="editarcadastro" *ngIf="editarCadastro">
+    <fieldset style="width: 90%; padding: 20px;">
+        <legend>Editar Sistema</legend>
+        <form>
+            <mat-form-field style="display: flex;">
+                <span style="margin-bottom: 5px;"> ID:</span>  <input matInput [(ngModel)]="sistema.id" name="ideditar" disabled>
+            </mat-form-field>
+            <mat-form-field>
+                <span style="margin-bottom: 5px;"> Nome:</span> <input matInput [(ngModel)]="sistema.nome" name="nomeeditar">
+            </mat-form-field>
+        </form>
+        <button mat-raised-button (click)="EditarCadastro()" color="primary">
+            Salvar
+        </button>
+        <button mat-raised-button (click)="openEditarCadastro(0, false)" style="background: red; color: white;">
+            Cancelar
+        </button>
+    </fieldset>
+</mat-card>

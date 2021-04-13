@@ -1,8 +1,43 @@
-<p>cadastro-regras works!</p>
 
-<button mat-raised-button (click)="createRegras()" color="primary">
-    Salvar Regra
-</button>
-<button mat-raised-button (click)="cancelar()">
-    Cancelar
-</button>
+<div>
+    <label for="selectSistema">Selecione o Sistema:</label>
+    <select class="select" id="selectSistema" [(ngModel)]="idSistemaSelecionado" (change)="carregardados()">
+        <option *ngFor="let item of sistemas" value={{item.id}}>{{ item.nome }}</option>    
+    </select>
+  </div>
+
+  <div *ngIf="abrirperguntas">
+    <div *ngFor="let item of variaveis">
+        <mat-card class="cadastro">
+            <fieldset style="width: 90%; padding: 20px;">
+                <legend>Pergunta</legend>        
+                <div *ngIf="item.status">            
+                    <p>{{item.descricao}}</p>
+                    <button class="btn bg-light" (click)="respostasim(item.id)"><p style="font-size: 25px; color: green;">Sim</p></button>
+                    <button class="btn bg-light" (click)="respostanao(item.id)"><p style="font-size: 25px; color: red;">Não</p></button>        
+                </div>        
+            </fieldset>
+          </mat-card>
+      </div>
+  </div>
+
+  <button *ngIf="abrirperguntas"  (click)="resultado()"> RESULTADO </button>
+
+  <div *ngIf="abrirresultado">
+    <div >
+        <mat-card class="cadastro">
+            <fieldset style="width: 90%; padding: 20px;">
+                <legend>resultado</legend>        
+                <div *ngFor="let item of variaveis">
+                    <div *ngIf="item.resposta">
+                        <p>{{item.descricao}}</p> {{item.valorvariavel}} = positivo
+                    </div>
+                    <hr>                                       
+                </div>        
+            </fieldset>
+          </mat-card>
+      </div>
+  </div>
+
+  <button class="btn bg-light" (click)="cancelar()"><p style="font-size: 25px; color: red;">Sair / Home</p></button>
+  

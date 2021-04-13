@@ -15,10 +15,14 @@ import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './core/home/home.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { CadastroRegrasComponent } from './core/cadastro-regras/cadastro-regras.component';
 import { CadastroVariaveisRegrasComponent } from './core/cadastro-variaveis-regras/cadastro-variaveis-regras.component';
 import { CadastroSistemaComponent } from './core/cadastro-sistema/cadastro-sistema.component';
+
 
 import { HttpClientModule} from '@angular/common/http'
 
@@ -43,7 +47,10 @@ import { HttpClientModule} from '@angular/common/http'
     MatCardModule,
     MatButtonModule,
     MatSnackBarModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

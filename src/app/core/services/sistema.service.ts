@@ -24,4 +24,25 @@ export class SistemaService {
   create(sistema: Sistema): Observable<Sistema> {
     return this.http.post<Sistema>(this.baseURL, sistema)
   }
+
+  read(): Observable<Sistema[]> {
+    return this.http.get<Sistema[]>(this.baseURL)
+  }
+
+  readById(id: string): Observable<Sistema>{
+    const url = `${this.baseURL}/${id}`
+    return this.http.get<Sistema>(url)
+  }
+
+  update(sistema: Sistema): Observable<Sistema>{
+    const url = `${this.baseURL}/${sistema.id}`
+    return this.http.put<Sistema>(url, sistema)
+  }
+
+  delete(id: string): Observable<Sistema>{
+    const url = `${this.baseURL}/${id}`
+    return this.http.delete<Sistema>(url)
+  }
+
+
 }

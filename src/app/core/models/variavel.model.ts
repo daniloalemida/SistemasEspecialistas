@@ -1,4 +1,8 @@
 export interface Variavel{
-    id?: number
-    name: string
+    id?: number,
+    idSistema: string,
+    valorvariavel: string,
+    descricao: string,
+    resposta: boolean,
+    status: boolean
 }

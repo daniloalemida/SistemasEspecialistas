@@ -1,1 +1,92 @@
-<p>cadastro-variaveis-regras works!</p>
+
+<div>
+    <label for="selectSistema">Selecione o Sistema:</label>
+    <select class="select" id="selectSistema" [(ngModel)]="idSistemaSelecionado" (change)="carregarVariaveis()">
+        <option *ngFor="let item of sistemas" value={{item.id}}>{{ item.nome }}</option>    
+    </select>
+  </div>
+
+  <mat-card>
+    <div class="">
+        <table class="table">
+            <thead class="">
+                <tr>
+                    <th style="width: 8%; align-items: flex-start; display: inline;">id</th>
+                    <th style="width: 20%; text-align: start;">Variavel</th>
+                    <th style="width: 40%; text-align: start;">Pergunta</th>
+                    <th style="width: 20%; text-align: start;">Resposta</th>
+                    <th style="width: 8%;"></th>
+                    <th style="width: 8%;"></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of variaveis">
+                <tr>
+                    <td>{{item.id}}</td>
+                    <td>{{item.valorvariavel}}</td>
+                    <td>{{item.descricao}}</td>
+                    <td>{{item.resposta}}</td>
+                    <td> <button class="btn bg-light" (click)="openEditarCadastro(item.id, true)"><i class="material-icons"
+                                style="font-size: 25px; color: green;">edit</i></button></td>
+                    <td> <button class="btn bg-light" (click)="deletarSistema(item.id)"><i class="material-icons"
+                                style="font-size: 25px; color: red;">delete</i></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <hr>
+
+    <div class="alinharbotao">
+        <button mat-raised-button (click)="openCadastro(true)" style="background: green; color: white;">
+            Cadastrar Nova Variavel
+        </button>
+        <button mat-raised-button (click)="cancelar()" style="background: red; color: white;">
+            Sair
+        </button>
+    </div>
+</mat-card>
+
+
+<mat-card class="cadastro" *ngIf="abrirCadastro">
+    <fieldset style="width: 90%; padding: 20px;">
+        <legend>Cadastrar Nova Variavel</legend>
+        <form>
+            <mat-form-field>
+                <input matInput placeholder="Variavel" [(ngModel)]="variavel.valorvariavel" name="variavel">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Pergunta" [(ngModel)]="variavel.descricao" name="deletarSistema()">
+            </mat-form-field>
+        </form>
+        <button mat-raised-button (click)="createVariavel()" color="primary">
+            Salvar Variavel
+        </button>
+        <button mat-raised-button (click)="openCadastro(false)" style="background: red; color: white;">
+            Cancelar
+        </button>
+    </fieldset>
+</mat-card>
+
+<mat-card class="editarcadastro" *ngIf="editarCadastro">
+    <fieldset style="width: 90%; padding: 20px;">
+        <legend>Editar Variavel</legend>
+        <form>
+            <mat-form-field style="display: flex;">
+                <span style="margin-bottom: 5px;"> ID:</span>  <input matInput [(ngModel)]="variavel.id" name="ideditar" disabled>
+            </mat-form-field>
+            <mat-form-field>
+                <span style="margin-bottom: 5px;"> Variavel:</span> <input matInput [(ngModel)]="variavel.valorvariavel" name="variaveleditar">
+            </mat-form-field>
+            <mat-form-field>
+                <span style="margin-bottom: 5px;"> Pergunta:</span> <input matInput [(ngModel)]="variavel.descricao" name="descricaoeditar">
+            </mat-form-field>
+        </form>
+        <button mat-raised-button (click)="EditarCadastro()" color="primary">
+            Salvar
+        </button>
+        <button mat-raised-button (click)="openEditarCadastro(0, false)" style="background: red; color: white;">
+            Cancelar
+        </button>
+    </fieldset>
+</mat-card>

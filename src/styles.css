@@ -7,6 +7,37 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     color: red
 }
 
+button {
+  cursor: pointer;
+}
+
+input {
+  cursor: pointer;
+}
+
 .v-middle{
     vertical-align: middle;
 }
+
+hr {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+fieldset {
+    display: block;
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 1px 20px;
+    border: 1px solid #cbc4c4;
+  }
+  
+  legend {
+    font-size: 18px;
+    color: #666666;
+    background: #fff;
+    padding: 0 15px;
+    width: fit-content;
+    width: -moz-fit-content;
+  }

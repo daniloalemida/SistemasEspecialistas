@@ -1,34 +1,94 @@
 {
   "sistemas": [
     {
-      "id": 1,
-      "nome": "a"
+      "nome": "Sistema teste 1",
+      "id": 1
     },
     {
-      "id": 2,
-      "nome": "b"
+      "nome": "Sistema teste 2",
+      "id": 2
     },
     {
-      "nome": "teste",
-      "id": 3
+      "id": 3,
+      "nome": "Sistema Animal legal"
     },
     {
-      "nome": "teste",
-      "id": 4
-    },
-    {
-      "nome": "teste",
-      "id": 5
+      "id": 4,
+      "nome": "animal"
     }
   ],
-  "casa": [
+  "variaveis": [
     {
       "id": 1,
-      "valor": 100
+      "idSistema": "1",
+      "valorvariavel": "mofada",
+      "descricao": "a folha está verde?",
+      "resposta": false,
+      "status": false
     },
     {
       "id": 2,
-      "valor": 100
+      "idSistema": "1",
+      "valorvariavel": "mofada",
+      "descricao": "a folha está azul?",
+      "resposta": false,
+      "status": false
+    },
+    {
+      "id": 3,
+      "idSistema": "2",
+      "valorvariavel": "mofada",
+      "descricao": "a folha está amarela?",
+      "resposta": true,
+      "status": false
+    },
+    {
+      "id": 4,
+      "idSistema": "2",
+      "valorvariavel": "mofada",
+      "descricao": "a folha está preta?",
+      "resposta": true,
+      "status": false
+    },
+    {
+      "id": 5,
+      "idSistema": "3",
+      "valorvariavel": "Cachorro",
+      "descricao": "Ele late?",
+      "resposta": true,
+      "status": false
+    },
+    {
+      "id": 6,
+      "idSistema": "3",
+      "valorvariavel": "Cachorro",
+      "descricao": "Ele tem pelo?",
+      "resposta": true,
+      "status": false
+    },
+    {
+      "id": 7,
+      "idSistema": "3",
+      "valorvariavel": "Cocota",
+      "descricao": "tem pena?",
+      "resposta": true,
+      "status": false
+    },
+    {
+      "id": 8,
+      "idSistema": "3",
+      "valorvariavel": "Gato",
+      "descricao": "Ele mia?",
+      "resposta": true,
+      "status": false
+    },
+    {
+      "id": 9,
+      "idSistema": "3",
+      "valorvariavel": "ornitorrinco",
+      "descricao": "Ele tem bico?",
+      "resposta": false,
+      "status": true
     }
   ]
 }
